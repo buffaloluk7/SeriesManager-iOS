@@ -2,7 +2,7 @@
 //  SeriesManagerTests.swift
 //  SeriesManagerTests
 //
-//  Created by Lukas Streiter on 05/11/14.
+//  Created by Lukas Streiter on 09/11/14.
 //  Copyright (c) 2014 Lukas Streiter. All rights reserved.
 //
 
