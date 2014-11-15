@@ -7,9 +7,9 @@
 //
 
 import Foundation
+import Alamofire
 
-//enum TheTVDBApiMethods: URLStringConvertible {
-enum TheTVDBApiMethods {
+enum TheTVDBApiMethods: URLStringConvertible {
     
     static let baseURL = "http://thetvdb.com"
     
@@ -28,7 +28,7 @@ enum TheTVDBApiMethods {
                 case .SearchSeries(let seriesName, let seriesLanguage):
                     //seriesName = seriesName.stringByReplacingOccurrencesOfString(" ", withString: "+").lowercaseString
                     let language = seriesLanguage == nil ? "de" : seriesLanguage!
-                    return "/api/GetSeries.php?seriesame=/\(seriesName)&language=\(language)"
+                    return "/api/GetSeries.php?seriesname=\(seriesName)&language=\(language)"
                 
                 case .GetSeries(let apiKey, let seriesId, let seriesLanguage):
                     let language = seriesLanguage == nil ? "de" : seriesLanguage!

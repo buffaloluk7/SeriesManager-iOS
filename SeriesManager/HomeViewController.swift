@@ -8,12 +8,14 @@
 
 import UIKit
 
-class HomeViewController: UITableViewController, UISearchBarDelegate {
+class HomeViewController: UITableViewController, UISearchBarDelegate, ApiSeriesListDelegate {
 
     let theTVDBApi: TheTVDBApi = TheTVDBApi()
+    var seriesList: [Series] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.theTVDBApi.apiSeriesListDelegate = self
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,7 +31,7 @@ class HomeViewController: UITableViewController, UISearchBarDelegate {
     
     // MARK: - Search bar delegte
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        let searchQuery: String = searchBar.text
+        self.theTVDBApi.getSeriesListByName(searchBar.text)
     }
     
     // MARK: - Table view data source
@@ -43,15 +45,15 @@ class HomeViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 3
+        return self.seriesList.count
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("seriesCell", forIndexPath: indexPath) as UITableViewCell
-        
+
         // Configure the cell.
-        cell.textLabel.text = "Dexter"
+        cell.textLabel.text = self.seriesList[indexPath.row].name
         cell.detailTextLabel?.text = "2004"
         
         return cell
@@ -101,6 +103,16 @@ class HomeViewController: UITableViewController, UISearchBarDelegate {
     // Pass the selected object to the new view controller.
     }
     */
-
+    
+    // MARK: - ApiSeriesList delegate
+    
+    func success(seriesList: [Series]) {
+        self.seriesList = seriesList
+        self.tableView.reloadData()
+    }
+    
+    func failure(error: NSError) {
+        
+    }
 
 }

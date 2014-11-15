@@ -7,7 +7,6 @@
         <!--SeriesManager-->
         <scene sceneID="LtY-f7-88y">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hsp-GR-26E" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="kvM-YG-8AQ" customClass="HomeViewController" customModule="SeriesManager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="oPa-69-0Ow">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -59,6 +58,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="SeriesManager" id="Ft8-Sf-JJr"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hsp-GR-26E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2878.5" y="397"/>
         </scene>
@@ -125,7 +125,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="400" width="400" height="200"/>
+                                    <rect key="frame" x="0.0" y="366" width="400" height="200"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="XZJ-ZB-0fM" id="tnh-0I-8aw"/>

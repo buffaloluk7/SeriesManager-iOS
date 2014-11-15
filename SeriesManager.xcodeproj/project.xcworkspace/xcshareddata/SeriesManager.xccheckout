@@ -12,6 +12,10 @@
 	<dict>
 		<key>11483CCB15E6BB38D60CBF566701C1B7C13D8205</key>
 		<string>https://github.com/buffaloluk7/SeriesManager-iOS.git</string>
+		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
+		<string>https://github.com/Alamofire/Alamofire.git</string>
+		<key>EB2210CFD48672E403BED699D5D7F01B844069CF</key>
+		<string>https://github.com/drmohundro/SWXMLHash.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>SeriesManager.xcodeproj</string>
@@ -19,6 +23,10 @@
 	<dict>
 		<key>11483CCB15E6BB38D60CBF566701C1B7C13D8205</key>
 		<string>../..</string>
+		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
+		<string>../../Alamofire</string>
+		<key>EB2210CFD48672E403BED699D5D7F01B844069CF</key>
+		<string>../../SWXMLHash</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/buffaloluk7/SeriesManager-iOS.git</string>
@@ -32,9 +40,25 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>67620B5EFA902936DF04070AF595B76AB0333747</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Alamofire</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>11483CCB15E6BB38D60CBF566701C1B7C13D8205</string>
 			<key>IDESourceControlWCCName</key>
 			<string>SeriesManager</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EB2210CFD48672E403BED699D5D7F01B844069CF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SWXMLHash</string>
 		</dict>
 	</array>
 </dict>
