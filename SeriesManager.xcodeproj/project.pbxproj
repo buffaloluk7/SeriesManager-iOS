@@ -9,11 +9,21 @@
 /* Begin PBXBuildFile section */
 		801075F91A0F9909001B06B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801075F81A0F9909001B06B5 /* AppDelegate.swift */; };
 		801075FC1A0F9909001B06B5 /* SeriesManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 801075FA1A0F9909001B06B5 /* SeriesManager.xcdatamodeld */; };
-		801075FE1A0F9909001B06B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801075FD1A0F9909001B06B5 /* ViewController.swift */; };
 		801076011A0F9909001B06B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801075FF1A0F9909001B06B5 /* Main.storyboard */; };
 		801076031A0F9909001B06B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 801076021A0F9909001B06B5 /* Images.xcassets */; };
 		801076061A0F9909001B06B5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 801076041A0F9909001B06B5 /* LaunchScreen.xib */; };
 		801076121A0F990A001B06B5 /* SeriesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801076111A0F990A001B06B5 /* SeriesManagerTests.swift */; };
+		802474921A17843800030407 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802474911A17843800030407 /* HomeViewController.swift */; };
+		802474941A178E6200030407 /* TheTVDBApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802474931A178E6200030407 /* TheTVDBApi.swift */; };
+		802474961A178F1600030407 /* ApiSeriesListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802474951A178F1600030407 /* ApiSeriesListDelegate.swift */; };
+		802474981A178F8500030407 /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802474971A178F8500030407 /* Series.swift */; };
+		8024749A1A1790B100030407 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802474991A1790B100030407 /* Season.swift */; };
+		8024749C1A17918500030407 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8024749B1A17918500030407 /* Episode.swift */; };
+		8024749E1A17923700030407 /* ApiSeriesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8024749D1A17923700030407 /* ApiSeriesDelegate.swift */; };
+		802474A01A179A9100030407 /* TheTVDBApiMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8024749F1A179A9100030407 /* TheTVDBApiMethods.swift */; };
+		8099CC541A17692400F5A54A /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8099CC531A17692400F5A54A /* SeriesViewController.swift */; };
+		8099CC561A17698000F5A54A /* SeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8099CC551A17698000F5A54A /* SeasonViewController.swift */; };
+		8099CC581A17699500F5A54A /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8099CC571A17699500F5A54A /* EpisodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,15 +39,25 @@
 /* Begin PBXFileReference section */
 		801075F31A0F9909001B06B5 /* SeriesManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeriesManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		801075F71A0F9909001B06B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		801075F81A0F9909001B06B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		801075F81A0F9909001B06B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; usesTabs = 0; };
 		801075FB1A0F9909001B06B5 /* SeriesManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SeriesManager.xcdatamodel; sourceTree = "<group>"; };
-		801075FD1A0F9909001B06B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		801076001A0F9909001B06B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		801076021A0F9909001B06B5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		801076051A0F9909001B06B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8010760B1A0F990A001B06B5 /* SeriesManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeriesManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		801076101A0F990A001B06B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		801076111A0F990A001B06B5 /* SeriesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesManagerTests.swift; sourceTree = "<group>"; };
+		802474911A17843800030407 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		802474931A178E6200030407 /* TheTVDBApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheTVDBApi.swift; sourceTree = "<group>"; };
+		802474951A178F1600030407 /* ApiSeriesListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiSeriesListDelegate.swift; sourceTree = "<group>"; };
+		802474971A178F8500030407 /* Series.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
+		802474991A1790B100030407 /* Season.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
+		8024749B1A17918500030407 /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		8024749D1A17923700030407 /* ApiSeriesDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiSeriesDelegate.swift; sourceTree = "<group>"; };
+		8024749F1A179A9100030407 /* TheTVDBApiMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheTVDBApiMethods.swift; sourceTree = "<group>"; };
+		8099CC531A17692400F5A54A /* SeriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesViewController.swift; sourceTree = "<group>"; };
+		8099CC551A17698000F5A54A /* SeasonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonViewController.swift; sourceTree = "<group>"; };
+		8099CC571A17699500F5A54A /* EpisodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +99,10 @@
 		801075F51A0F9909001B06B5 /* SeriesManager */ = {
 			isa = PBXGroup;
 			children = (
+				8099CC4F1A1760BB00F5A54A /* TheTVDBApi */,
+				8099CC4E1A1760B600F5A54A /* Models */,
+				8099CC4D1A1760AA00F5A54A /* ViewControllers */,
 				801075F81A0F9909001B06B5 /* AppDelegate.swift */,
-				801075FD1A0F9909001B06B5 /* ViewController.swift */,
 				801075FF1A0F9909001B06B5 /* Main.storyboard */,
 				801076021A0F9909001B06B5 /* Images.xcassets */,
 				801076041A0F9909001B06B5 /* LaunchScreen.xib */,
@@ -113,6 +135,46 @@
 				801076101A0F990A001B06B5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8099CC4D1A1760AA00F5A54A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8099CC531A17692400F5A54A /* SeriesViewController.swift */,
+				8099CC551A17698000F5A54A /* SeasonViewController.swift */,
+				8099CC571A17699500F5A54A /* EpisodeViewController.swift */,
+				802474911A17843800030407 /* HomeViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8099CC4E1A1760B600F5A54A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				802474971A178F8500030407 /* Series.swift */,
+				802474991A1790B100030407 /* Season.swift */,
+				8024749B1A17918500030407 /* Episode.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		8099CC4F1A1760BB00F5A54A /* TheTVDBApi */ = {
+			isa = PBXGroup;
+			children = (
+				8099CC501A1760D800F5A54A /* Models */,
+				802474931A178E6200030407 /* TheTVDBApi.swift */,
+				802474951A178F1600030407 /* ApiSeriesListDelegate.swift */,
+				8024749D1A17923700030407 /* ApiSeriesDelegate.swift */,
+				8024749F1A179A9100030407 /* TheTVDBApiMethods.swift */,
+			);
+			name = TheTVDBApi;
+			sourceTree = "<group>";
+		};
+		8099CC501A1760D800F5A54A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,9 +277,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				801075FE1A0F9909001B06B5 /* ViewController.swift in Sources */,
+				8099CC561A17698000F5A54A /* SeasonViewController.swift in Sources */,
 				801075FC1A0F9909001B06B5 /* SeriesManager.xcdatamodeld in Sources */,
+				8024749A1A1790B100030407 /* Season.swift in Sources */,
+				802474941A178E6200030407 /* TheTVDBApi.swift in Sources */,
 				801075F91A0F9909001B06B5 /* AppDelegate.swift in Sources */,
+				8024749C1A17918500030407 /* Episode.swift in Sources */,
+				8099CC581A17699500F5A54A /* EpisodeViewController.swift in Sources */,
+				8099CC541A17692400F5A54A /* SeriesViewController.swift in Sources */,
+				802474981A178F8500030407 /* Series.swift in Sources */,
+				802474921A17843800030407 /* HomeViewController.swift in Sources */,
+				8024749E1A17923700030407 /* ApiSeriesDelegate.swift in Sources */,
+				802474961A178F1600030407 /* ApiSeriesListDelegate.swift in Sources */,
+				802474A01A179A9100030407 /* TheTVDBApiMethods.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +481,7 @@
 				801076171A0F990A001B06B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		801076181A0F990A001B06B5 /* Build configuration list for PBXNativeTarget "SeriesManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +490,7 @@
 				8010761A1A0F990A001B06B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
