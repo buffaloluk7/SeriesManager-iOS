@@ -8,13 +8,13 @@
 
 import Foundation
 
-class Episode {
-
-    init() {}
-    
+class Episode: NSObject {
+  
     var id: Int?
     var name: String?
     var overview: String?
     var firstAired: String?
+    var imagePath: String?
+    var seasonNumber: Int?
     
 }

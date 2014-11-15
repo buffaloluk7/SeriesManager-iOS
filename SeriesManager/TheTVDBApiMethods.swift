@@ -14,8 +14,8 @@ enum TheTVDBApiMethods: URLStringConvertible {
     static let baseURL = "http://thetvdb.com"
     
     case Root
-    case SearchSeries(String, String?)
-    case GetSeries(String, Int, String?)
+    case SearchSeries(String, String)
+    case GetSeries(String, Int, String)
  
     // MARK: URLStringConvertible
     
@@ -25,14 +25,12 @@ enum TheTVDBApiMethods: URLStringConvertible {
                 case .Root:
                     return "/"
                 
-                case .SearchSeries(let seriesName, let seriesLanguage):
-                    //seriesName = seriesName.stringByReplacingOccurrencesOfString(" ", withString: "+").lowercaseString
-                    let language = seriesLanguage == nil ? "de" : seriesLanguage!
-                    return "/api/GetSeries.php?seriesname=\(seriesName)&language=\(language)"
+                case .SearchSeries(var seriesName, let seriesLanguage):
+                    seriesName = seriesName.stringByReplacingOccurrencesOfString(" ", withString: "+").lowercaseString
+                    return "/api/GetSeries.php?seriesname=\(seriesName)&language=\(seriesLanguage)"
                 
                 case .GetSeries(let apiKey, let seriesId, let seriesLanguage):
-                    let language = seriesLanguage == nil ? "de" : seriesLanguage!
-                    return "/api/\(apiKey)/series/\(seriesId)/all/\(language).xml"
+                    return "/api/\(apiKey)/series/\(seriesId)/all/\(seriesLanguage).xml"
             }
         }()
         

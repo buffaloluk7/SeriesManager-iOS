@@ -8,10 +8,18 @@
 
 import UIKit
 
-class SeriesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SeriesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TheTVDBApiDelegate {
 
+    let theTVDBApi: TheTVDBApi = TheTVDBApi()
+    var series: Series?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = series?.name
+        
+        // Load the whole series.
+        self.theTVDBApi.getSeriesById(series!.id!)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -57,5 +65,11 @@ class SeriesViewController: UIViewController, UITableViewDataSource, UITableView
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - TheTVDBAPI delegates
+    
+    func didReceiveSeries(series: Series) {
+        self.title = "received!"
+    }
 
 }

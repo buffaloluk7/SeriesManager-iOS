@@ -8,9 +8,7 @@
 
 import Foundation
 
-class Season {
-    
-    init() {}
+class Season: NSObject {
     
     var id: Int?
     var episodes: [Episode] = []

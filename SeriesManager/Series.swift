@@ -8,14 +8,12 @@
 
 import Foundation
 
-class Series {
-    
-    init() {}
+class Series: NSObject {
 
     var id: Int?
     var name: String?
-    var bannerPath: String?
     var overview: String?
+    var imagePath: String?
     var firstAired: String?
     var seasons: [Season] = []
 
