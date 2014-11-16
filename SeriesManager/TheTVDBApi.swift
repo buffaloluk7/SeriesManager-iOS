@@ -22,7 +22,7 @@ class TheTVDBApi {
     }
     
     func getSeriesListByName(name: String) {
-        Logger.log("Execte search request.")
+        Logger.log("Execute search request.")
         
         Alamofire.request(.GET, TheTVDBApiMethods.SearchSeries(name, self.apiLanguage))
             .responseString {(request, response, string, error) in
@@ -53,7 +53,7 @@ class TheTVDBApi {
     }
     
     func getSeriesById(id: Int) {
-        Logger.log("Execte search request.")
+        Logger.log("Execute search request.")
         
         Alamofire.request(.GET, TheTVDBApiMethods.GetSeries(self.apiKey, id, self.apiLanguage))
             .responseString {(request, response, string, error) in

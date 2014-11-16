@@ -8,18 +8,31 @@
 
 import UIKit
 
-class EpisodeViewController: UIViewController {
+class EpisodeViewController: UIViewController, TheTVDBApiDelegate {
 
+    let theTVDBApi: TheTVDBApi = TheTVDBApi()
     var episode: Episode!
+    
+    @IBOutlet weak var episodeImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.theTVDBApi.apiDelegate = self
         self.title = episode.name
+        
+        // Load the episode image.
+        if episode.imagePath != nil {
+            self.theTVDBApi.getImageByPath(episode.imagePath!)
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func didReceiveImage(image: UIImage?) {
+        self.episodeImage.image = image
     }
 
 }
