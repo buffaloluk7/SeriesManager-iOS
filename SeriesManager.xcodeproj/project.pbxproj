@@ -129,8 +129,8 @@
 		801075EA1A0F9909001B06B5 = {
 			isa = PBXGroup;
 			children = (
-				80248F091A17A54400274BF6 /* SWXMLHash.xcodeproj */,
 				802474AA1A179F8800030407 /* Alamofire.xcodeproj */,
+				80248F091A17A54400274BF6 /* SWXMLHash.xcodeproj */,
 				801075F51A0F9909001B06B5 /* SeriesManager */,
 				8010760E1A0F990A001B06B5 /* SeriesManagerTests */,
 				801075F41A0F9909001B06B5 /* Products */,
@@ -370,7 +370,6 @@
 			files = (
 				801076011A0F9909001B06B5 /* Main.storyboard in Resources */,
 				801076061A0F9909001B06B5 /* LaunchScreen.xib in Resources */,
-				801076031A0F9909001B06B5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

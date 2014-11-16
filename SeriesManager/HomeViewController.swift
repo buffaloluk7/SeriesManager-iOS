@@ -51,8 +51,9 @@ class HomeViewController: UITableViewController, UISearchBarDelegate, TheTVDBApi
         let cell = tableView.dequeueReusableCellWithIdentifier("seriesCell", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell.
-        cell.textLabel.text = self.seriesList[indexPath.row].name
-        cell.detailTextLabel?.text = "2004"
+        let series = self.seriesList[indexPath.row]
+        cell.textLabel.text = series.name
+        cell.detailTextLabel?.text = series.overview
         
         return cell
     }

@@ -41,9 +41,9 @@ class TheTVDBApi {
                     let series: Series = Series()
                     series.id = seriesXml["seriesid"].element?.text?.toInt()
                     series.name = seriesXml["SeriesName"].element?.text
-                    series.overview = seriesXml["Overview"].element?.text;
-                    series.imagePath = seriesXml["banner"].element?.text;
-                    series.firstAired = seriesXml["FirstAired"].element?.text;
+                    series.overview = seriesXml["Overview"].element?.text
+                    series.firstAired = seriesXml["FirstAired"].element?.text
+                    series.bannerPath = seriesXml["banner"].element?.text
                     seriesList.append(series)
                 }
                 
@@ -77,9 +77,11 @@ class TheTVDBApi {
                 // Parse the series information.
                 series.id = seriesXml["SeriesID"].element?.text?.toInt()
                 series.name = seriesXml["SeriesName"].element?.text
-                series.overview = seriesXml["Overview"].element?.text;
-                series.imagePath = seriesXml["banner"].element?.text;
-                series.firstAired = seriesXml["FirstAired"].element?.text;
+                series.overview = seriesXml["Overview"].element?.text
+                series.firstAired = seriesXml["FirstAired"].element?.text
+                series.bannerPath = seriesXml["banner"].element?.text
+                series.fanartPath = seriesXml["fanart"].element?.text
+                series.posterPath = seriesXml["poster"].element?.text
                 
                 // Parse the episodes.
                 for episodeXml in episodesXml {
@@ -126,7 +128,17 @@ class TheTVDBApi {
     }
     
     func getImageByPath(path: String) {
-        // TODO: Need to change signature to return an image.
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            Logger.log("Start fetching image")
+
+            let imageURL: String = TheTVDBApiMethods.GetImage(path).URLString
+            let image = UIImage(data: NSData(contentsOfURL: NSURL(string: imageURL)!)!)
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                Logger.log("Call the image delegate")
+                self.apiDelegate?.didReceiveImage?(image)
+            })
+        })
     }
     
 }

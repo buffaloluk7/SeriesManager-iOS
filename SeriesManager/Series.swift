@@ -13,8 +13,10 @@ class Series: NSObject {
     var id: Int?
     var name: String?
     var overview: String?
-    var imagePath: String?
     var firstAired: String?
+    var bannerPath: String?
+    var fanartPath: String?
+    var posterPath: String?
     var seasons: [Season] = []
 
 }

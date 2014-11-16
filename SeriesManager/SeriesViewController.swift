@@ -13,27 +13,25 @@ class SeriesViewController: UIViewController, UITableViewDataSource, UITableView
     let theTVDBApi: TheTVDBApi = TheTVDBApi()
     var series: Series!
     
+    @IBOutlet weak var seriesImage: UIImageView!
+    @IBOutlet weak var seriesName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.theTVDBApi.apiDelegate = self
-        self.title = series?.name
+        
+        // Set UI controls.
+        self.title = series.name
+        self.seriesName.text = series.name
 
         // Load the whole series.
-        self.theTVDBApi.getSeriesById(series!.id!)
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.theTVDBApi.getSeriesById(series.id!)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -86,11 +84,21 @@ class SeriesViewController: UIViewController, UITableViewDataSource, UITableView
     func didReceiveSeries(series: Series) {
         Logger.log("Update tableview data.")
         
+        // Download the series image.
+        if series.fanartPath != nil {
+            self.theTVDBApi.getImageByPath(series.fanartPath!)
+        }
+        
         // Order seasons by their season number.
         series.seasons.sort { $0.number < $1.number }
         
         self.series = series
         self.tableView.reloadData()
+    }
+    
+    func didReceiveImage(image: UIImage?) {
+        Logger.log("Set the series image.")
+        self.seriesImage.image = image
     }
 
 }

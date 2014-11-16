@@ -16,6 +16,7 @@ enum TheTVDBApiMethods: URLStringConvertible {
     case Root
     case SearchSeries(String, String)
     case GetSeries(String, Int, String)
+    case GetImage(String)
  
     // MARK: URLStringConvertible
     
@@ -31,6 +32,9 @@ enum TheTVDBApiMethods: URLStringConvertible {
                 
                 case .GetSeries(let apiKey, let seriesId, let seriesLanguage):
                     return "/api/\(apiKey)/series/\(seriesId)/all/\(seriesLanguage).xml"
+                
+                case .GetImage(let imagePath):
+                    return "/banners/\(imagePath)"
             }
         }()
         

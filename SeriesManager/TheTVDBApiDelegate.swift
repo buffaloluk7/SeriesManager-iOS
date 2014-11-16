@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 @objc protocol TheTVDBApiDelegate {
     optional func didReceiveSeriesList(series: [Series])
     optional func didReceiveSeries(series: Series)
-    optional func didReceiveImage(image: String)
+    optional func didReceiveImage(image: UIImage?)
     optional func didReceiveAPIError(error: NSError)
 }
