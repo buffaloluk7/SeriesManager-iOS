@@ -11,13 +11,16 @@ import UIKit
 class SeriesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TheTVDBApiDelegate {
 
     let theTVDBApi: TheTVDBApi = TheTVDBApi()
-    var series: Series?
+    var series: Series!
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.theTVDBApi.apiDelegate = self
         self.title = series?.name
-        
+
         // Load the whole series.
         self.theTVDBApi.getSeriesById(series!.id!)
 
@@ -36,15 +39,13 @@ class SeriesViewController: UIViewController, UITableViewDataSource, UITableView
     // MARK: - Table view data source
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return self.series.seasons.count
     }
 
     
@@ -52,24 +53,44 @@ class SeriesViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier("seasonCell", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
+        let season = self.series.seasons[indexPath.row]
+        cell.textLabel.text = "Season \(season.number!)"
+        cell.detailTextLabel?.text = "\(season.episodes.count) Episodes"
 
         return cell
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "showSeasonSegue":
+                // Get selected series.
+                let cell = sender as UITableViewCell
+                let indexPath = self.tableView.indexPathForSelectedRow()
+                let selectedSeason = self.series.seasons[indexPath!.row]
+                
+                // Pass series to view controller
+                let viewController = segue.destinationViewController as SeasonViewController
+                viewController.season = selectedSeason
+                
+            default:
+                break
+            }
+        }
     }
-    */
     
     // MARK: - TheTVDBAPI delegates
     
     func didReceiveSeries(series: Series) {
-        self.title = "received!"
+        Logger.log("Update tableview data.")
+        
+        // Order seasons by their season number.
+        series.seasons.sort { $0.number < $1.number }
+        
+        self.series = series
+        self.tableView.reloadData()
     }
 
 }

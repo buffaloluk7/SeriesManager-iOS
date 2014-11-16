@@ -37,13 +37,11 @@ class HomeViewController: UITableViewController, UISearchBarDelegate, TheTVDBApi
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return self.seriesList.count
     }
@@ -61,7 +59,6 @@ class HomeViewController: UITableViewController, UISearchBarDelegate, TheTVDBApi
 
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
             switch identifier {

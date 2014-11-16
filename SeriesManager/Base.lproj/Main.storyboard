@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rr0-cC-TY8">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -128,7 +129,7 @@
                                                     </subviews>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <segue destination="JgJ-sf-ywb" kind="show" id="nZc-B3-YUD"/>
+                                                    <segue destination="JgJ-sf-ywb" kind="show" identifier="showSeasonSegue" id="nZc-B3-YUD"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -173,10 +174,10 @@
                                         <exclude reference="NDl-uT-zRs"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="DEo-vZ-ahu"/>
-                                        <exclude reference="YaH-vE-E2c"/>
                                         <exclude reference="pyC-Gb-ew8"/>
                                         <exclude reference="yuB-mH-myb"/>
+                                        <exclude reference="DEo-vZ-ahu"/>
+                                        <exclude reference="YaH-vE-E2c"/>
                                         <exclude reference="AT2-dh-XdX"/>
                                         <exclude reference="bVy-EZ-Za1"/>
                                         <exclude reference="cUB-AF-AhG"/>
@@ -192,10 +193,10 @@
                                         <include reference="NDl-uT-zRs"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="DEo-vZ-ahu"/>
-                                        <include reference="YaH-vE-E2c"/>
                                         <include reference="pyC-Gb-ew8"/>
                                         <include reference="yuB-mH-myb"/>
+                                        <include reference="DEo-vZ-ahu"/>
+                                        <include reference="YaH-vE-E2c"/>
                                         <include reference="AT2-dh-XdX"/>
                                         <include reference="bVy-EZ-Za1"/>
                                         <include reference="cUB-AF-AhG"/>
@@ -236,6 +237,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="o4z-pm-WDu" id="Eyk-I5-0IM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9O-p5-oX7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -250,7 +254,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="episodeCell" textLabel="1pU-Q6-wdE" style="IBUITableViewCellStyleDefault" id="tMv-FI-5Za">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="episodeCell" textLabel="1pU-Q6-wdE" detailTextLabel="0O0-8Y-3fU" style="IBUITableViewCellStyleValue1" id="tMv-FI-5Za">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tMv-FI-5Za" id="2yD-9N-y93">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -264,10 +268,19 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             </variation>
                                         </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0O0-8Y-3fU">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact">
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            </variation>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="VPK-M8-o4b" kind="show" id="2Sb-lF-zlU"/>
+                                    <segue destination="VPK-M8-o4b" kind="show" identifier="showEpisodeSegue" id="2Sb-lF-zlU"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

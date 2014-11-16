@@ -11,10 +11,12 @@ import Foundation
 class Episode: NSObject {
   
     var id: Int?
+    var seriesId: Int?
+    var number: Int?
+    var seasonNumber: Int?
     var name: String?
     var overview: String?
     var firstAired: String?
     var imagePath: String?
-    var seasonNumber: Int?
     
 }
