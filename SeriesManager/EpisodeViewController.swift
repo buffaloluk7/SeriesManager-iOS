@@ -14,12 +14,14 @@ class EpisodeViewController: UIViewController, TheTVDBApiDelegate {
     var episode: Episode!
     
     @IBOutlet weak var episodeImage: UIImageView!
+    @IBOutlet weak var episodeName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.theTVDBApi.apiDelegate = self
         self.title = episode.name
+        self.episodeName.text = episode.name
         
         // Load the episode image.
         if episode.imagePath != nil {

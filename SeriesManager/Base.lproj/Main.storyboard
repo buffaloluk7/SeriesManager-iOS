@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rr0-cC-TY8">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--SeriesManager-->
@@ -56,7 +58,7 @@
             </objects>
             <point key="canvasLocation" x="2878.5" y="397"/>
         </scene>
-        <!--Series View Controller-->
+        <!--Title-->
         <scene sceneID="4RH-Bu-flH">
             <objects>
                 <viewController id="4SV-90-24w" customClass="SeriesViewController" customModule="SeriesManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -68,25 +70,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SeriesManager Fanart" translatesAutoresizingMaskIntoConstraints="NO" id="tda-lu-3Cf">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="338"/>
-                                <color key="backgroundColor" red="0.56470588239999997" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="225"/>
-                                </variation>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SeriesName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFr-t1-Xus">
-                                <rect key="frame" x="16" y="357" width="93" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="240" width="93" height="21"/>
-                                </variation>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="300" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Q7h-qH-M2x">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="300" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Q7h-qH-M2x">
                                 <rect key="frame" x="0.0" y="414" width="600" height="122"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="122" id="rLW-3f-pLs">
+                                        <variation key="widthClass=compact" constant="235"/>
+                                    </constraint>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="seasonCell" textLabel="4aP-67-out" detailTextLabel="W41-Yw-hAE" style="IBUITableViewCellStyleValue1" id="fOC-JG-PF0">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -118,26 +109,61 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="300" width="400" height="300"/>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="527" width="800" height="9"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="4SV-90-24w" id="nJ4-pG-TNg"/>
                                     <outlet property="delegate" destination="4SV-90-24w" id="lWB-if-OjU"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SeriesManager Fanart" translatesAutoresizingMaskIntoConstraints="NO" id="x5U-Tp-vDj">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="338"/>
+                                <color key="backgroundColor" red="0.56470588239999997" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="x5U-Tp-vDj" secondAttribute="height" multiplier="300:169" id="z0L-p6-gDh"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SeriesName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rj-d8-nqz">
+                                <rect key="frame" x="16" y="346" width="93" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="BqB-R1-ln6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="16" y="459" width="93" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7rj-d8-nqz" firstAttribute="top" secondItem="x5U-Tp-vDj" secondAttribute="bottom" constant="8" symbolic="YES" id="B0f-h4-xIG">
+                                <variation key="widthClass=compact" constant="8"/>
+                            </constraint>
+                            <constraint firstItem="x5U-Tp-vDj" firstAttribute="leading" secondItem="8Up-dd-EuQ" secondAttribute="leading" id="C1w-OS-oOC"/>
+                            <constraint firstItem="x5U-Tp-vDj" firstAttribute="trailing" secondItem="Q7h-qH-M2x" secondAttribute="trailing" id="HiD-eN-kyh"/>
+                            <constraint firstItem="7rj-d8-nqz" firstAttribute="leading" secondItem="8Up-dd-EuQ" secondAttribute="leadingMargin" id="KFX-XY-yl2"/>
+                            <constraint firstItem="Q7h-qH-M2x" firstAttribute="leading" secondItem="x5U-Tp-vDj" secondAttribute="leading" id="oxH-Qr-1oh"/>
+                            <constraint firstItem="Q7h-qH-M2x" firstAttribute="top" secondItem="7rj-d8-nqz" secondAttribute="bottom" constant="47" id="tCC-F7-Zkc"/>
+                            <constraint firstAttribute="trailing" secondItem="x5U-Tp-vDj" secondAttribute="trailing" id="x4I-j8-AjQ"/>
+                            <constraint firstItem="Q7h-qH-M2x" firstAttribute="bottom" secondItem="zOV-BB-BqG" secondAttribute="top" id="xkr-YS-Pc5"/>
+                            <constraint firstItem="x5U-Tp-vDj" firstAttribute="top" secondItem="E15-TP-n7X" secondAttribute="bottom" id="zjX-Im-T61"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="XXN-9K-66X">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="GpU-2e-uok"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="seriesImage" destination="tda-lu-3Cf" id="bJV-Sl-gWY"/>
-                        <outlet property="seriesName" destination="CFr-t1-Xus" id="a0l-SS-ora"/>
+                        <outlet property="seriesImage" destination="x5U-Tp-vDj" id="fl7-EZ-f04"/>
+                        <outlet property="seriesName" destination="7rj-d8-nqz" id="zCT-B5-cD8"/>
                         <outlet property="tableView" destination="Q7h-qH-M2x" id="Nca-nL-4nP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ack-Mg-0D6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3679" y="397"/>
+            <point key="canvasLocation" x="3678" y="397"/>
         </scene>
         <!--Season View Controller-->
         <scene sceneID="1yo-gE-gWQ">
@@ -200,32 +226,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SeriesManager Fanart" translatesAutoresizingMaskIntoConstraints="NO" id="ehn-JO-FEQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SeriesManager Fanart" translatesAutoresizingMaskIntoConstraints="NO" id="ehn-JO-FEQ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="338"/>
                                 <color key="backgroundColor" red="0.56470588239999997" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="225"/>
-                                </variation>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ehn-JO-FEQ" secondAttribute="height" multiplier="300:169" id="AEs-GT-HkB"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EpisodeName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dtp-an-vQC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EpisodeName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dtp-an-vQC">
                                 <rect key="frame" x="16" y="354" width="108" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="wc8-ei-rAb"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="233" width="108" height="21"/>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ehn-JO-FEQ" firstAttribute="top" secondItem="kKy-W6-3g8" secondAttribute="bottom" id="3iZ-K6-wQ7"/>
+                            <constraint firstItem="ehn-JO-FEQ" firstAttribute="leading" secondItem="7eY-lz-EAV" secondAttribute="leading" id="O6B-oe-uzj"/>
+                            <constraint firstAttribute="trailing" secondItem="ehn-JO-FEQ" secondAttribute="trailing" id="ZL0-8A-Mv6"/>
+                            <constraint firstItem="EF3-Zs-ZBj" firstAttribute="top" secondItem="Dtp-an-vQC" secondAttribute="bottom" constant="161" id="aag-2J-nXt">
+                                <variation key="widthClass=compact" constant="282"/>
+                            </constraint>
+                            <constraint firstItem="Dtp-an-vQC" firstAttribute="top" secondItem="ehn-JO-FEQ" secondAttribute="bottom" constant="16" id="eBk-OW-TPE">
+                                <variation key="widthClass=compact" constant="8"/>
+                            </constraint>
+                            <constraint firstItem="Dtp-an-vQC" firstAttribute="leading" secondItem="7eY-lz-EAV" secondAttribute="leadingMargin" id="ovM-hJ-q5G"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="episodeImage" destination="ehn-JO-FEQ" id="cUG-AG-qkT"/>
+                        <outlet property="episodeName" destination="Dtp-an-vQC" id="EEa-83-Ru8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46x-2q-utZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5347" y="397"/>
+            <point key="canvasLocation" x="5346" y="397"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cyc-gk-Wb5">
