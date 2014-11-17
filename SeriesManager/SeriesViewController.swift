@@ -8,13 +8,14 @@
 
 import UIKit
 
-class SeriesViewController: UITableViewController, TheTVDBApiDelegate {
+class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TheTVDBApiDelegate {
 
     let theTVDBApi: TheTVDBApi = TheTVDBApi()
     var series: Series!
     
     @IBOutlet weak var seriesImage: UIImageView!
     @IBOutlet weak var seriesName: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,18 +36,18 @@ class SeriesViewController: UITableViewController, TheTVDBApiDelegate {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
         return self.series.seasons.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("seasonCell", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
