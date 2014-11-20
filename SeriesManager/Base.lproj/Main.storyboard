@@ -74,9 +74,7 @@
                                 <rect key="frame" x="0.0" y="414" width="600" height="122"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="122" id="rLW-3f-pLs">
-                                        <variation key="widthClass=compact" constant="235"/>
-                                    </constraint>
+                                    <constraint firstAttribute="height" constant="122" id="Bss-tv-5k3"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="seasonCell" textLabel="4aP-67-out" detailTextLabel="W41-Yw-hAE" style="IBUITableViewCellStyleValue1" id="fOC-JG-PF0">
@@ -117,17 +115,17 @@
                                     <outlet property="delegate" destination="4SV-90-24w" id="lWB-if-OjU"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SeriesManager Fanart" translatesAutoresizingMaskIntoConstraints="NO" id="x5U-Tp-vDj">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SeriesManager" translatesAutoresizingMaskIntoConstraints="NO" id="x5U-Tp-vDj">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="338"/>
                                 <color key="backgroundColor" red="0.56470588239999997" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="x5U-Tp-vDj" secondAttribute="height" multiplier="300:169" id="z0L-p6-gDh"/>
+                                    <constraint firstAttribute="width" secondItem="x5U-Tp-vDj" secondAttribute="height" multiplier="300:169" id="X1s-kN-g3u"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SeriesName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rj-d8-nqz">
                                 <rect key="frame" x="16" y="338" width="128" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="BqB-R1-ln6"/>
+                                    <constraint firstAttribute="height" constant="29" id="9jQ-y8-EMG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -138,6 +136,9 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlz-Wh-E1b">
                                 <rect key="frame" x="16" y="375" width="55" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="bQj-VL-gCf"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -145,19 +146,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7rj-d8-nqz" firstAttribute="top" secondItem="x5U-Tp-vDj" secondAttribute="bottom" id="B0f-h4-xIG">
-                                <variation key="widthClass=compact" constant="8"/>
-                            </constraint>
-                            <constraint firstItem="x5U-Tp-vDj" firstAttribute="leading" secondItem="8Up-dd-EuQ" secondAttribute="leading" id="C1w-OS-oOC"/>
-                            <constraint firstItem="x5U-Tp-vDj" firstAttribute="trailing" secondItem="Q7h-qH-M2x" secondAttribute="trailing" id="HiD-eN-kyh"/>
-                            <constraint firstItem="7rj-d8-nqz" firstAttribute="leading" secondItem="8Up-dd-EuQ" secondAttribute="leadingMargin" id="KFX-XY-yl2"/>
-                            <constraint firstItem="tlz-Wh-E1b" firstAttribute="top" secondItem="7rj-d8-nqz" secondAttribute="bottom" constant="8" symbolic="YES" id="ZOB-ak-niY"/>
-                            <constraint firstItem="Q7h-qH-M2x" firstAttribute="leading" secondItem="x5U-Tp-vDj" secondAttribute="leading" id="oxH-Qr-1oh"/>
-                            <constraint firstItem="Q7h-qH-M2x" firstAttribute="top" secondItem="7rj-d8-nqz" secondAttribute="bottom" constant="47" id="tCC-F7-Zkc"/>
-                            <constraint firstItem="tlz-Wh-E1b" firstAttribute="leading" secondItem="7rj-d8-nqz" secondAttribute="leading" id="uEm-hF-NoH"/>
-                            <constraint firstAttribute="trailing" secondItem="x5U-Tp-vDj" secondAttribute="trailing" id="x4I-j8-AjQ"/>
-                            <constraint firstItem="Q7h-qH-M2x" firstAttribute="bottom" secondItem="zOV-BB-BqG" secondAttribute="top" id="xkr-YS-Pc5"/>
-                            <constraint firstItem="x5U-Tp-vDj" firstAttribute="top" secondItem="E15-TP-n7X" secondAttribute="bottom" id="zjX-Im-T61"/>
+                            <constraint firstItem="x5U-Tp-vDj" firstAttribute="trailing" secondItem="Q7h-qH-M2x" secondAttribute="trailing" id="3kc-WK-ewW"/>
+                            <constraint firstItem="7rj-d8-nqz" firstAttribute="leading" secondItem="8Up-dd-EuQ" secondAttribute="leadingMargin" id="90e-KY-7u2"/>
+                            <constraint firstItem="7rj-d8-nqz" firstAttribute="top" secondItem="x5U-Tp-vDj" secondAttribute="bottom" id="F18-ss-tgF"/>
+                            <constraint firstItem="Q7h-qH-M2x" firstAttribute="bottom" secondItem="zOV-BB-BqG" secondAttribute="top" id="Gca-8q-5zv"/>
+                            <constraint firstAttribute="trailing" secondItem="Q7h-qH-M2x" secondAttribute="trailing" id="HcU-vh-Gcm"/>
+                            <constraint firstItem="Q7h-qH-M2x" firstAttribute="top" secondItem="tlz-Wh-E1b" secondAttribute="bottom" constant="18" id="HeR-BX-F2B"/>
+                            <constraint firstItem="x5U-Tp-vDj" firstAttribute="top" secondItem="E15-TP-n7X" secondAttribute="bottom" id="LNW-G5-ETp"/>
+                            <constraint firstItem="Q7h-qH-M2x" firstAttribute="leading" secondItem="8Up-dd-EuQ" secondAttribute="leading" id="RML-sd-5Hd"/>
+                            <constraint firstItem="x5U-Tp-vDj" firstAttribute="leading" secondItem="Q7h-qH-M2x" secondAttribute="leading" id="URV-sj-4hB"/>
+                            <constraint firstItem="tlz-Wh-E1b" firstAttribute="leading" secondItem="7rj-d8-nqz" secondAttribute="leading" id="UdR-Ah-uBE"/>
+                            <constraint firstItem="tlz-Wh-E1b" firstAttribute="top" secondItem="7rj-d8-nqz" secondAttribute="bottom" constant="8" symbolic="YES" id="fe5-jj-jP4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SeriesName" id="XXN-9K-66X">
@@ -235,35 +234,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SeriesManager Fanart" translatesAutoresizingMaskIntoConstraints="NO" id="ehn-JO-FEQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SeriesManager" translatesAutoresizingMaskIntoConstraints="NO" id="ehn-JO-FEQ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="338"/>
                                 <color key="backgroundColor" red="0.56470588239999997" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="ehn-JO-FEQ" secondAttribute="height" multiplier="300:169" id="AEs-GT-HkB"/>
+                                    <constraint firstAttribute="width" secondItem="ehn-JO-FEQ" secondAttribute="height" multiplier="300:169" id="UPa-WP-sFo"/>
                                 </constraints>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="226"/>
+                                </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EpisodeName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dtp-an-vQC">
-                                <rect key="frame" x="16" y="354" width="108" height="21"/>
+                                <rect key="frame" x="16" y="346" width="108" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="wc8-ei-rAb"/>
+                                    <constraint firstAttribute="height" constant="21" id="KQM-eS-oxw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="242" width="108" height="133"/>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ehn-JO-FEQ" firstAttribute="top" secondItem="kKy-W6-3g8" secondAttribute="bottom" id="3iZ-K6-wQ7"/>
-                            <constraint firstItem="ehn-JO-FEQ" firstAttribute="leading" secondItem="7eY-lz-EAV" secondAttribute="leading" id="O6B-oe-uzj"/>
-                            <constraint firstAttribute="trailing" secondItem="ehn-JO-FEQ" secondAttribute="trailing" id="ZL0-8A-Mv6"/>
-                            <constraint firstItem="EF3-Zs-ZBj" firstAttribute="top" secondItem="Dtp-an-vQC" secondAttribute="bottom" constant="161" id="aag-2J-nXt">
-                                <variation key="widthClass=compact" constant="282"/>
-                            </constraint>
-                            <constraint firstItem="Dtp-an-vQC" firstAttribute="top" secondItem="ehn-JO-FEQ" secondAttribute="bottom" constant="16" id="eBk-OW-TPE">
-                                <variation key="widthClass=compact" constant="8"/>
-                            </constraint>
-                            <constraint firstItem="Dtp-an-vQC" firstAttribute="leading" secondItem="7eY-lz-EAV" secondAttribute="leadingMargin" id="ovM-hJ-q5G"/>
+                            <constraint firstItem="EF3-Zs-ZBj" firstAttribute="top" secondItem="Dtp-an-vQC" secondAttribute="bottom" constant="169" id="8cL-1c-EPY"/>
+                            <constraint firstItem="Dtp-an-vQC" firstAttribute="leading" secondItem="7eY-lz-EAV" secondAttribute="leadingMargin" id="ATI-hC-ubT"/>
+                            <constraint firstItem="Dtp-an-vQC" firstAttribute="top" secondItem="ehn-JO-FEQ" secondAttribute="bottom" constant="8" symbolic="YES" id="Xje-Q3-KMS"/>
+                            <constraint firstAttribute="trailing" secondItem="ehn-JO-FEQ" secondAttribute="trailing" id="gRj-c1-8S4"/>
+                            <constraint firstItem="ehn-JO-FEQ" firstAttribute="leading" secondItem="7eY-lz-EAV" secondAttribute="leading" id="iiR-pO-6Vx"/>
+                            <constraint firstItem="ehn-JO-FEQ" firstAttribute="top" secondItem="kKy-W6-3g8" secondAttribute="bottom" id="vKU-GV-RCP"/>
                         </constraints>
                     </view>
                     <connections>
@@ -301,6 +302,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SeriesManager Fanart" width="620" height="300"/>
+        <image name="SeriesManager" width="490" height="276"/>
     </resources>
 </document>

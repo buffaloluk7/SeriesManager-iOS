@@ -24,6 +24,7 @@
 		8099CC541A17692400F5A54A /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8099CC531A17692400F5A54A /* SeriesViewController.swift */; };
 		8099CC561A17698000F5A54A /* SeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8099CC551A17698000F5A54A /* SeasonViewController.swift */; };
 		8099CC581A17699500F5A54A /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8099CC571A17699500F5A54A /* EpisodeViewController.swift */; };
+		80EBEF531A1E35E6009B9399 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 801076021A0F9909001B06B5 /* Images.xcassets */; };
 		80F831D11A17EA7000AC512F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F831D01A17EA7000AC512F /* Logger.swift */; };
 /* End PBXBuildFile section */
 
@@ -367,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80EBEF531A1E35E6009B9399 /* Images.xcassets in Resources */,
 				801076011A0F9909001B06B5 /* Main.storyboard in Resources */,
 				801076061A0F9909001B06B5 /* LaunchScreen.xib in Resources */,
 			);
