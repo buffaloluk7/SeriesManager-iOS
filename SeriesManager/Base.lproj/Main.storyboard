@@ -143,7 +143,7 @@
                                 <variation key="widthClass=compact" constant="8"/>
                             </constraint>
                             <constraint firstItem="x5U-Tp-vDj" firstAttribute="leading" secondItem="8Up-dd-EuQ" secondAttribute="leading" id="C1w-OS-oOC"/>
-                            <constraint firstItem="x5U-Tp-vDj" firstAttribute="trailing" secondItem="Q7h-qH-M2x" secondAttribute="trailing" constant="14" id="HiD-eN-kyh"/>
+                            <constraint firstItem="x5U-Tp-vDj" firstAttribute="trailing" secondItem="Q7h-qH-M2x" secondAttribute="trailing" id="HiD-eN-kyh"/>
                             <constraint firstItem="7rj-d8-nqz" firstAttribute="leading" secondItem="8Up-dd-EuQ" secondAttribute="leadingMargin" id="KFX-XY-yl2"/>
                             <constraint firstItem="Q7h-qH-M2x" firstAttribute="leading" secondItem="x5U-Tp-vDj" secondAttribute="leading" id="oxH-Qr-1oh"/>
                             <constraint firstItem="Q7h-qH-M2x" firstAttribute="top" secondItem="7rj-d8-nqz" secondAttribute="bottom" constant="47" id="tCC-F7-Zkc"/>
