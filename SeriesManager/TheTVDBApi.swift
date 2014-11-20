@@ -160,7 +160,9 @@ class TheTVDBApi {
             return []
         }
         
-        return seperatedString!.componentsSeparatedByString(seperator)
+        var stringArray = seperatedString!.componentsSeparatedByString(seperator)
+
+        return stringArray.filter({!$0.isEmpty})
     }
     
 }
