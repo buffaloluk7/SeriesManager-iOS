@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rr0-cC-TY8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rr0-cC-TY8">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -58,7 +58,7 @@
             </objects>
             <point key="canvasLocation" x="2878.5" y="397"/>
         </scene>
-        <!--Title-->
+        <!--SeriesName-->
         <scene sceneID="4RH-Bu-flH">
             <objects>
                 <viewController id="4SV-90-24w" customClass="SeriesViewController" customModule="SeriesManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -125,11 +125,11 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SeriesName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rj-d8-nqz">
-                                <rect key="frame" x="16" y="346" width="93" height="21"/>
+                                <rect key="frame" x="16" y="338" width="128" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="BqB-R1-ln6"/>
+                                    <constraint firstAttribute="height" constant="29" id="BqB-R1-ln6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
@@ -139,11 +139,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7rj-d8-nqz" firstAttribute="top" secondItem="x5U-Tp-vDj" secondAttribute="bottom" constant="8" symbolic="YES" id="B0f-h4-xIG">
+                            <constraint firstItem="7rj-d8-nqz" firstAttribute="top" secondItem="x5U-Tp-vDj" secondAttribute="bottom" id="B0f-h4-xIG">
                                 <variation key="widthClass=compact" constant="8"/>
                             </constraint>
                             <constraint firstItem="x5U-Tp-vDj" firstAttribute="leading" secondItem="8Up-dd-EuQ" secondAttribute="leading" id="C1w-OS-oOC"/>
-                            <constraint firstItem="x5U-Tp-vDj" firstAttribute="trailing" secondItem="Q7h-qH-M2x" secondAttribute="trailing" id="HiD-eN-kyh"/>
+                            <constraint firstItem="x5U-Tp-vDj" firstAttribute="trailing" secondItem="Q7h-qH-M2x" secondAttribute="trailing" constant="14" id="HiD-eN-kyh"/>
                             <constraint firstItem="7rj-d8-nqz" firstAttribute="leading" secondItem="8Up-dd-EuQ" secondAttribute="leadingMargin" id="KFX-XY-yl2"/>
                             <constraint firstItem="Q7h-qH-M2x" firstAttribute="leading" secondItem="x5U-Tp-vDj" secondAttribute="leading" id="oxH-Qr-1oh"/>
                             <constraint firstItem="Q7h-qH-M2x" firstAttribute="top" secondItem="7rj-d8-nqz" secondAttribute="bottom" constant="47" id="tCC-F7-Zkc"/>
@@ -152,7 +152,7 @@
                             <constraint firstItem="x5U-Tp-vDj" firstAttribute="top" secondItem="E15-TP-n7X" secondAttribute="bottom" id="zjX-Im-T61"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="XXN-9K-66X">
+                    <navigationItem key="navigationItem" title="SeriesName" id="XXN-9K-66X">
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="GpU-2e-uok"/>
                     </navigationItem>
                     <connections>

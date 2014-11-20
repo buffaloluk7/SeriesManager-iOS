@@ -13,7 +13,7 @@ class Series: NSObject {
     var id: Int?
     var name: String?
     var overview: String?
-    var firstAired: String?
+    var firstAired: NSDate?
     var bannerPath: String?
     var fanartPath: String?
     var posterPath: String?

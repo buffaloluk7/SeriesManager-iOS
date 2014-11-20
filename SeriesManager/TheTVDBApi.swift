@@ -42,8 +42,9 @@ class TheTVDBApi {
                     series.id = seriesXml["seriesid"].element?.text?.toInt()
                     series.name = seriesXml["SeriesName"].element?.text
                     series.overview = seriesXml["Overview"].element?.text
-                    series.firstAired = seriesXml["FirstAired"].element?.text
+                    series.firstAired = self.convertStringtoNSDate(seriesXml["FirstAired"].element?.text)
                     series.bannerPath = seriesXml["banner"].element?.text
+                    
                     seriesList.append(series)
                 }
                 
@@ -78,7 +79,7 @@ class TheTVDBApi {
                 series.id = seriesXml["SeriesID"].element?.text?.toInt()
                 series.name = seriesXml["SeriesName"].element?.text
                 series.overview = seriesXml["Overview"].element?.text
-                series.firstAired = seriesXml["FirstAired"].element?.text
+                series.firstAired = self.convertStringtoNSDate(seriesXml["FirstAired"].element?.text)
                 series.bannerPath = seriesXml["banner"].element?.text
                 series.fanartPath = seriesXml["fanart"].element?.text
                 series.posterPath = seriesXml["poster"].element?.text
@@ -96,7 +97,7 @@ class TheTVDBApi {
                     episode.seasonNumber = episodeXml["SeasonNumber"].element?.text?.toInt()
                     episode.name = episodeXml["EpisodeName"].element?.text
                     episode.overview = episodeXml["Overview"].element?.text
-                    episode.firstAired = episodeXml["FirstAired"].element?.text
+                    episode.firstAired = self.convertStringtoNSDate(episodeXml["FirstAired"].element?.text)
                     episode.imagePath = episodeXml["filename"].element?.text
                     
                     // Append the episode to the temporary array of episodes.
@@ -139,6 +140,18 @@ class TheTVDBApi {
                 self.apiDelegate?.didReceiveImage?(image)
             })
         })
+    }
+    
+    private func convertStringtoNSDate(dateAsString: String?) -> NSDate? {
+        // Convert string to NSDate
+        if dateAsString == nil {
+            return nil
+        }
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        return dateFormatter.dateFromString(dateAsString!)
     }
     
 }

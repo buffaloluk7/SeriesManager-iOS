@@ -16,7 +16,7 @@ class Episode: NSObject {
     var seasonNumber: Int?
     var name: String?
     var overview: String?
-    var firstAired: String?
+    var firstAired: NSDate?
     var imagePath: String?
     
 }

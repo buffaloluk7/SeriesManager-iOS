@@ -52,7 +52,15 @@ class HomeViewController: UITableViewController, UISearchBarDelegate, TheTVDBApi
 
         // Configure the cell.
         let series = self.seriesList[indexPath.row]
-        cell.textLabel.text = series.name
+        
+        if series.firstAired == nil {
+            cell.textLabel.text = series.name
+        } else {
+            // Get year from NSDate
+            let seriesYear = NSCalendar.currentCalendar().component(.CalendarUnitYear, fromDate: series.firstAired!)
+            cell.textLabel.text = "\(series.name!) (\(seriesYear))"
+        }
+        
         cell.detailTextLabel?.text = series.overview
         
         return cell
