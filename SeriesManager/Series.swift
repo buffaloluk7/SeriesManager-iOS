@@ -14,6 +14,7 @@ class Series: NSObject {
     var name: String?
     var overview: String?
     var firstAired: NSDate?
+    var genre: [String] = []
     var bannerPath: String?
     var fanartPath: String?
     var posterPath: String?

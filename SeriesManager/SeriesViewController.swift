@@ -16,6 +16,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var seriesImage: UIImageView!
     @IBOutlet weak var seriesName: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var seriesGenre: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,15 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         // Load the whole series.
         self.theTVDBApi.getSeriesById(series.id!)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        // Deselect previously selected row here so that the user sees a glimpse of the previous selection when they return.
+        if let indexPath = self.tableView.indexPathForSelectedRow() {
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,6 +101,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // Order seasons by their season number.
         series.seasons.sort { $0.number < $1.number }
+        self.seriesGenre.text = ", ".join(series.genre)
         
         self.series = series
         self.tableView.reloadData()

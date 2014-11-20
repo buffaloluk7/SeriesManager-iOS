@@ -80,6 +80,7 @@ class TheTVDBApi {
                 series.name = seriesXml["SeriesName"].element?.text
                 series.overview = seriesXml["Overview"].element?.text
                 series.firstAired = self.convertStringtoNSDate(seriesXml["FirstAired"].element?.text)
+                series.genre = self.convertSeperatedStringtoArray(seriesXml["Genre"].element?.text)
                 series.bannerPath = seriesXml["banner"].element?.text
                 series.fanartPath = seriesXml["fanart"].element?.text
                 series.posterPath = seriesXml["poster"].element?.text
@@ -152,6 +153,14 @@ class TheTVDBApi {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
         return dateFormatter.dateFromString(dateAsString!)
+    }
+    
+    private func convertSeperatedStringtoArray(seperatedString: String?, seperator: String = "|") -> [String] {
+        if seperatedString == nil {
+            return []
+        }
+        
+        return seperatedString!.componentsSeparatedByString(seperator)
     }
     
 }
