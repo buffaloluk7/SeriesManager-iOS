@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rr0-cC-TY8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rr0-cC-TY8">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -107,7 +107,7 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                <variation key="widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="0.0" y="527" width="800" height="9"/>
                                 </variation>
                                 <connections>
@@ -130,7 +130,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=regular" ambiguous="YES" misplaced="YES">
+                                <variation key="widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="16" y="459" width="93" height="21"/>
                                 </variation>
                             </label>
@@ -240,36 +240,58 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ehn-JO-FEQ" secondAttribute="height" multiplier="300:169" id="UPa-WP-sFo"/>
                                 </constraints>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="226"/>
-                                </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EpisodeName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dtp-an-vQC">
-                                <rect key="frame" x="16" y="346" width="108" height="21"/>
+                                <rect key="frame" x="16" y="346" width="584" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="KQM-eS-oxw"/>
+                                    <constraint firstAttribute="height" constant="21" id="01b-oI-eVH"/>
+                                    <constraint firstAttribute="width" id="1hg-KR-inM"/>
+                                    <constraint firstAttribute="width" constant="584" id="LCC-MF-1F7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1hg-KR-inM"/>
+                                    </mask>
+                                </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="16" y="242" width="108" height="133"/>
                                 </variation>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpZ-JT-0Gq">
+                                <rect key="frame" x="16" y="387" width="568" height="141"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="EF3-Zs-ZBj" firstAttribute="top" secondItem="Dtp-an-vQC" secondAttribute="bottom" constant="169" id="8cL-1c-EPY"/>
+                            <constraint firstItem="rpZ-JT-0Gq" firstAttribute="top" secondItem="Dtp-an-vQC" secondAttribute="bottom" constant="20" id="9bP-PB-Tml"/>
                             <constraint firstItem="Dtp-an-vQC" firstAttribute="leading" secondItem="7eY-lz-EAV" secondAttribute="leadingMargin" id="ATI-hC-ubT"/>
-                            <constraint firstItem="Dtp-an-vQC" firstAttribute="top" secondItem="ehn-JO-FEQ" secondAttribute="bottom" constant="8" symbolic="YES" id="Xje-Q3-KMS"/>
+                            <constraint firstItem="rpZ-JT-0Gq" firstAttribute="centerX" secondItem="ehn-JO-FEQ" secondAttribute="centerX" id="BT8-2S-Wt6"/>
+                            <constraint firstItem="Dtp-an-vQC" firstAttribute="top" secondItem="ehn-JO-FEQ" secondAttribute="bottom" constant="8" symbolic="YES" id="XOY-Lt-WFP"/>
+                            <constraint firstItem="EF3-Zs-ZBj" firstAttribute="top" secondItem="rpZ-JT-0Gq" secondAttribute="bottom" constant="8" symbolic="YES" id="YUE-6r-XZs"/>
+                            <constraint firstItem="Dtp-an-vQC" firstAttribute="leading" secondItem="7eY-lz-EAV" secondAttribute="leadingMargin" id="bW8-Y3-wN0"/>
+                            <constraint firstItem="rpZ-JT-0Gq" firstAttribute="leading" secondItem="Dtp-an-vQC" secondAttribute="leading" id="d1W-XL-pti"/>
                             <constraint firstAttribute="trailing" secondItem="ehn-JO-FEQ" secondAttribute="trailing" id="gRj-c1-8S4"/>
                             <constraint firstItem="ehn-JO-FEQ" firstAttribute="leading" secondItem="7eY-lz-EAV" secondAttribute="leading" id="iiR-pO-6Vx"/>
+                            <constraint firstItem="rpZ-JT-0Gq" firstAttribute="leading" secondItem="7eY-lz-EAV" secondAttribute="leadingMargin" id="p2J-wn-Bxo"/>
+                            <constraint firstItem="rpZ-JT-0Gq" firstAttribute="trailing" secondItem="7eY-lz-EAV" secondAttribute="trailingMargin" id="q8u-8y-NOj"/>
                             <constraint firstItem="ehn-JO-FEQ" firstAttribute="top" secondItem="kKy-W6-3g8" secondAttribute="bottom" id="vKU-GV-RCP"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ATI-hC-ubT"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="episodeImage" destination="ehn-JO-FEQ" id="cUG-AG-qkT"/>
                         <outlet property="episodeName" destination="Dtp-an-vQC" id="EEa-83-Ru8"/>
+                        <outlet property="episodeOverview" destination="rpZ-JT-0Gq" id="o6A-15-0WV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46x-2q-utZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
