@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Haneke
 
 class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TheTVDBApiDelegate {
 
@@ -62,7 +63,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         // Configure the cell...
         let season = self.series.seasons[indexPath.row]
-        cell.textLabel.text = "Season \(season.number!)"
+        cell.textLabel?.text = "Season \(season.number!)"
         cell.detailTextLabel?.text = "\(season.episodes.count) Episodes"
 
         return cell
@@ -96,7 +97,9 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // Download the series image.
         if series.fanartPath != nil {
-            self.theTVDBApi.getImageByPath(series.fanartPath!)
+            //self.theTVDBApi.getImageByPath(series.fanartPath!)
+            let imageURL: String = TheTVDBApiMethods.GetImage(series.fanartPath!).URLString
+            self.seriesImage.hnk_setImageFromURL(NSURL(string: imageURL)!)
         }
         
         // Order seasons by their season number.

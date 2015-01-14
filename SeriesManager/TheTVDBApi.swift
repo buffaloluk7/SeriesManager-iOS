@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import SWXMLHash
+import Haneke
 
 class TheTVDBApi {
     
@@ -56,17 +57,14 @@ class TheTVDBApi {
     func getSeriesById(id: Int) {
         Logger.log("Execute search request.")
         
-        Alamofire.request(.GET, TheTVDBApiMethods.GetSeries(self.apiKey, id, self.apiLanguage))
-            .responseString {(request, response, string, error) in
+        let cache = Shared.stringCache
+        let URL = NSURL(string: TheTVDBApiMethods.GetSeries(self.apiKey, id, self.apiLanguage).URLString)!
+        
+        cache.fetch(URL: URL).onSuccess { string in
                 Logger.log("Start parsing series.")
-                // Check for an error.
-                if error != nil {
-                    self.apiDelegate?.didReceiveAPIError?(error!)
-                    return
-                }
                 
                 // Parse the xml.
-                let xml = SWXMLHash.parse(string!)
+                let xml = SWXMLHash.parse(string)
                 let seriesXml = xml["Data"]["Series"]
                 let episodesXml = xml["Data"]["Episode"]
                 
@@ -127,20 +125,6 @@ class TheTVDBApi {
                 Logger.log("Call the series delegate")
                 self.apiDelegate?.didReceiveSeries?(series)
         }
-    }
-    
-    func getImageByPath(path: String) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            Logger.log("Start fetching image")
-
-            let imageURL: String = TheTVDBApiMethods.GetImage(path).URLString
-            let image = UIImage(data: NSData(contentsOfURL: NSURL(string: imageURL)!)!)
-            
-            dispatch_async(dispatch_get_main_queue(), {
-                Logger.log("Call the image delegate")
-                self.apiDelegate?.didReceiveImage?(image)
-            })
-        })
     }
     
     private func convertStringtoNSDate(dateAsString: String?) -> NSDate? {

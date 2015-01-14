@@ -4,3 +4,6 @@
 [submodule "SWXMLHash"]
 	path = SWXMLHash
 	url = https://github.com/drmohundro/SWXMLHash
+[submodule "HanekeSwift"]
+	path = HanekeSwift
+	url = https://github.com/Haneke/HanekeSwift

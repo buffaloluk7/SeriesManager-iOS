@@ -46,7 +46,7 @@ class SeasonViewController: UITableViewController {
 
         // Configure the cell...
         let episode = self.season.episodes[indexPath.row]
-        cell.textLabel.text = episode.name
+        cell.textLabel?.text = episode.name
         cell.detailTextLabel?.text = String(episode.number!)
 
         return cell

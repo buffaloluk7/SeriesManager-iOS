@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Haneke
 
 class EpisodeViewController: UIViewController, TheTVDBApiDelegate {
 
@@ -32,7 +33,8 @@ class EpisodeViewController: UIViewController, TheTVDBApiDelegate {
         
         // Load the episode image.
         if episode.imagePath != nil {
-            self.theTVDBApi.getImageByPath(episode.imagePath!)
+            let imageURL: String = TheTVDBApiMethods.GetImage(episode.imagePath!).URLString
+            self.episodeImage.hnk_setImageFromURL(NSURL(string: imageURL)!)
         }
     }
 
