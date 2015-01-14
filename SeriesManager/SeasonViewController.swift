@@ -16,17 +16,6 @@ class SeasonViewController: UITableViewController {
         super.viewDidLoad()
         
         self.title = "Season \(season.number!)"
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -63,7 +52,7 @@ class SeasonViewController: UITableViewController {
                 let indexPath = self.tableView.indexPathForSelectedRow()
                 let selectedEpisode = self.season.episodes[indexPath!.row]
                 
-                // Pass series to view controller
+                // Pass series to view controller.
                 let viewController = segue.destinationViewController as EpisodeViewController
                 viewController.episode = selectedEpisode
                 

@@ -41,10 +41,6 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
     // MARK: - Table view data source
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -95,7 +91,7 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func didReceiveSeries(series: Series) {
         Logger.log("Update tableview data.")
         
-        // Download the series image.
+        // Load and set the series image.
         if series.fanartPath != nil {
             //self.theTVDBApi.getImageByPath(series.fanartPath!)
             let imageURL: String = TheTVDBApiMethods.GetImage(series.fanartPath!).URLString
@@ -108,11 +104,6 @@ class SeriesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.series = series
         self.tableView.reloadData()
-    }
-    
-    func didReceiveImage(image: UIImage?) {
-        Logger.log("Set the series image.")
-        self.seriesImage.image = image
     }
 
 }

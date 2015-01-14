@@ -16,17 +16,6 @@ class HomeViewController: UITableViewController, UISearchBarDelegate, TheTVDBApi
     override func viewDidLoad() {
         super.viewDidLoad()
         self.theTVDBApi.apiDelegate = self
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Search bar delegte
@@ -89,9 +78,12 @@ class HomeViewController: UITableViewController, UISearchBarDelegate, TheTVDBApi
     
     // MARK: - TheTVDBAPI delegates
     
+    // Retrieve the series list when call succeeded.
     func didReceiveSeriesList(seriesList: [Series]) {
         Logger.log("Update tableview data.")
         self.seriesList = seriesList
+        
+        // Reload table view to display retrieved series list.
         self.tableView.reloadData()
     }
 

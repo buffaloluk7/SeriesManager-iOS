@@ -21,29 +21,24 @@ class EpisodeViewController: UIViewController, TheTVDBApiDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set the api delegate.
+        self.theTVDBApi.apiDelegate = self
         
+        // Set overview style.
         episodeOverview.editable = true;
         episodeOverview.font = UIFont(name: "Helvetica", size: 17)
         episodeOverview.editable = false;
 
-        self.theTVDBApi.apiDelegate = self
+        // Set ui properties.
         self.title = episode.name
         self.episodeName.text = episode.name
         self.episodeOverview.text = episode.overview;
         
-        // Load the episode image.
+        // Load and set the episode image.
         if episode.imagePath != nil {
             let imageURL: String = TheTVDBApiMethods.GetImage(episode.imagePath!).URLString
             self.episodeImage.hnk_setImageFromURL(NSURL(string: imageURL)!)
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    func didReceiveImage(image: UIImage?) {
-        self.episodeImage.image = image
     }
 
 }

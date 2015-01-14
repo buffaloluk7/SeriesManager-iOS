@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// Delegate used by TheTVDBApi class.
 @objc protocol TheTVDBApiDelegate {
     optional func didReceiveSeriesList(series: [Series])
     optional func didReceiveSeries(series: Series)

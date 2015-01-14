@@ -25,6 +25,7 @@ class TheTVDBApi {
     func getSeriesListByName(name: String) {
         Logger.log("Execute search request.")
         
+        // Start the api request to retrieve a list of all series filtered by their series name.
         Alamofire.request(.GET, TheTVDBApiMethods.SearchSeries(name, self.apiLanguage))
             .responseString {(request, response, string, error) in
                 Logger.log("Start parsing list of series.")
@@ -60,6 +61,7 @@ class TheTVDBApi {
         let cache = Shared.stringCache
         let URL = NSURL(string: TheTVDBApiMethods.GetSeries(self.apiKey, id, self.apiLanguage).URLString)!
         
+        // Use Haneke Cache to retrieve the series - either from cache or api.
         cache.fetch(URL: URL).onSuccess { string in
                 Logger.log("Start parsing series.")
                 
@@ -127,6 +129,7 @@ class TheTVDBApi {
         }
     }
     
+    // Convert String object to NSDate
     private func convertStringtoNSDate(dateAsString: String?) -> NSDate? {
         // Convert string to NSDate
         if dateAsString == nil {
@@ -139,6 +142,7 @@ class TheTVDBApi {
         return dateFormatter.dateFromString(dateAsString!)
     }
     
+    // Convert seperated String object to String array.
     private func convertSeperatedStringtoArray(seperatedString: String?, seperator: String = "|") -> [String] {
         if seperatedString == nil {
             return []
